@@ -26,7 +26,11 @@ docker build -t simblock_JOEX .
 以下のコマンドでSimBlockを実行します。
 
 ```bash
-docker run --rm -i   -v $(pwd)/settings/SimulationConfiguration.java:/app/simblock/simulator/src/main/java/simblock/settings/SimulationConfiguration.java   -v $(pwd)/settings/NetworkConfiguration.java:/app/simblock/simulator/src/main/java/simblock/settings/NetworkConfiguration.java   -v $(pwd)/output:/app/simblock/simulator/src/dist/output   simblock-minimal 2>&1 | tee simulation_log.txt
+docker run --rm -i \
+  -v $(pwd)/settings/SimulationConfiguration.java:/app/simblock/simulator/src/main/java/simblock/settings/SimulationConfiguration.java \
+  -v $(pwd)/settings/NetworkConfiguration.java:/app/simblock/simulator/src/main/java/simblock/settings/NetworkConfiguration.java \
+  -v $(pwd)/output:/app/simblock/simulator/src/dist/output \
+  simblock-minimal 2>&1 | tee simulation_log.txt
 ```
 
 実行後、シミュレーション結果は`output`ディレクトリに保存されます。
@@ -90,7 +94,11 @@ mkdir -p simulator/src/dist/output/graph
 Execute the following command to start a simulation:
 
 ```bash
-docker run --rm -i   -v $(pwd)/settings/SimulationConfiguration.java:/app/simblock/simulator/src/main/java/simblock/settings/SimulationConfiguration.java   -v $(pwd)/settings/NetworkConfiguration.java:/app/simblock/simulator/src/main/java/simblock/settings/NetworkConfiguration.java   -v $(pwd)/output:/app/simblock/simulator/src/dist/output   simblock-minimal 2>&1 | tee simulation_log.txt
+docker run --rm -i \
+  -v $(pwd)/settings/SimulationConfiguration.java:/app/simblock/simulator/src/main/java/simblock/settings/SimulationConfiguration.java \
+  -v $(pwd)/settings/NetworkConfiguration.java:/app/simblock/simulator/src/main/java/simblock/settings/NetworkConfiguration.java \
+  -v $(pwd)/output:/app/simblock/simulator/src/dist/output \
+  simblock-minimal 2>&1 | tee simulation_log.txt
 ```
 
 ### Verify Outputs
