@@ -18,7 +18,7 @@ git clone https://github.com/yanagihalab/JO_EX.git
 2. Dockerイメージをビルドします。
 
 ```bash
-docker build -t simblock_JOEX .
+docker build -t simblock-joex .
 ```
 
 ## 使い方
@@ -30,7 +30,7 @@ docker run --rm -i \
   -v $(pwd)/settings/SimulationConfiguration.java:/app/simblock/simulator/src/main/java/simblock/settings/SimulationConfiguration.java \
   -v $(pwd)/settings/NetworkConfiguration.java:/app/simblock/simulator/src/main/java/simblock/settings/NetworkConfiguration.java \
   -v $(pwd)/output:/app/simblock/simulator/src/dist/output \
-  simblock-minimal 2>&1 | tee simulation_log.txt
+  simblock-joex 2>&1 | tee simulation_log.txt
 ```
 
 実行後、シミュレーション結果は`output`ディレクトリに保存されます。
@@ -56,6 +56,8 @@ SimBlockはApache License 2.0のもとで提供されています。
 
 詳細については[ライセンスファイル](LICENSE)をご確認ください。
 
+
+https://dsg-titech.github.io/simblock-visualizer/
 
 # SimBlock Docker Environment
 
@@ -118,3 +120,4 @@ Simulation results are saved in:
 - Official Repository: [SimBlock GitHub](https://github.com/dsg-titech/simblock)
 - Version: v0.8.0
 
+https://dsg-titech.github.io/simblock-visualizer/
