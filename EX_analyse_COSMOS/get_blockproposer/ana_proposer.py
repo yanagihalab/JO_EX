@@ -34,7 +34,7 @@ plt.xlabel("Block Height")
 plt.ylabel("Block Generation Time (seconds)")
 plt.title("Block Generation Time Trend")
 plt.grid(alpha=0.7)
-plt.savefig("block_generation_time_trend.png")  # ブロック生成時間の推移を画像ファイルとして保存
+plt.savefig("block_generation_time_trend.png")  # ブロック生成時間の推移を画像ファイルとして保存 ここいらない
 plt.close()
 
 # 遅いブロックの提案者を確認（2秒以上）

@@ -82,7 +82,7 @@ for height in tqdm(range(END_BLOCK, START_BLOCK + 1), desc="Fetching Blocks", un
     else:
         print(f"[Warning] Failed to fetch block {height}, skipping.")
 
-    time.sleep(0.2)  # RPCの負荷軽減
+    time.sleep(0.5)  # RPCの負荷軽減
 
 # データフレームに変換
 df = pd.DataFrame(block_data)
