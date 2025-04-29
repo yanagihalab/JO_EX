@@ -16,69 +16,60 @@
 
 package simblock.settings;
 
-/** The type Simulation configuration allows for specific simulation instance configuration. */
+/** シミュレーションの具体的な設定を管理するシミュレーション構成クラス */
 public class SimulationConfiguration {
-  /** The number of nodes participating in the blockchain network. */
-  // TODO revert
+  /** ブロックチェーンネットワークに参加するノードの数 */
   public static final int NUM_OF_NODES = 6000; // 300; // 600;//800;//6000;
-  // public static final int NUM_OF_NODES = 600;//600;//800;//6000;
 
-  /** The kind of routing table. */
+  /** 使用するルーティングテーブルの種類 */
   public static final String TABLE = "simblock.node.routing.BitcoinCoreTable";
 
-  /** The consensus algorithm to be used. */
-  // TODO not documented in markdown
-  // TODO return to PoW
+  /** 使用するコンセンサスアルゴリズム */
   public static final String ALGO = "simblock.node.consensus.ProofOfWork";
 
   /**
-   * The expected value of block generation interval. The difficulty of mining is automatically
-   * adjusted by this value and the sum of mining power. (unit: millisecond)
+   * ブロック生成間隔の期待値。
+   * マイニングの難易度は、この値と全ノードのマイニングパワーの合計によって自動調整される。（単位：ミリ秒）
    */
-  public static final long INTERVAL = 1000 * 60 * 10; // 1000*60;//1000*30*5;//1000*60*10;
+  public static final long INTERVAL = 1000 * 60 * 10; // 10分
 
   /**
-   * The average mining power of each node. Mining power corresponds to Hash Rate in Bitcoin, and is
-   * the number of mining (hash calculation) executed per millisecond.
+   * 各ノードの平均マイニングパワー。
+   * マイニングパワーはビットコインのハッシュレートに相当し、1ミリ秒あたりのマイニング（ハッシュ計算）回数を示す。
    */
   public static final long AVERAGE_MINING_POWER = 400000;
 
   /**
-   * The mining power of each node is determined randomly according to the normal distribution whose
-   * average is AVERAGE_MINING_POWER and standard deviation is STDEV_OF_MINING_POWER.
+   * 各ノードのマイニングパワーは、平均がAVERAGE_MINING_POWER、標準偏差がSTDEV_OF_MINING_POWERの正規分布に従ってランダムに決定される。
    */
   public static final long STDEV_OF_MINING_POWER = 100000;
 
-  /** The constant AVERAGE_COINS. */
-  // TODO
+  /** 平均保有コイン数 */
   public static final int AVERAGE_COINS = 4000;
-  /** The constant STDEV_OF_COINS. */
-  // TODO
+  /** 保有コイン数の標準偏差 */
   public static final int STDEV_OF_COINS = 2000;
 
-  /** The reward a PoS minter gets for staking. */
+  /** Proof of Stake (PoS) でミントする際に得られる報酬 */
   public static final double STAKING_REWARD = 0.01;
 
-  /** The block height when a simulation ends. */
-  // TODO revert
-  // public static final int END_BLOCK_HEIGHT = 100;
+  /** シミュレーションを終了するブロックの高さ */
   public static final int END_BLOCK_HEIGHT = 3;
 
-  /** Block size. (unit: byte). */
-  public static final long BLOCK_SIZE = 535000; // 6110;//8000;//535000;//0.5MB
+  /** ブロックサイズ（単位：バイト） */
+  public static final long BLOCK_SIZE = 535000; // 0.5MB
 
-  /** The usage rate of compact block relay (CBR) protocol. */
+  /** Compact Block Relay (CBR)プロトコルの利用率 */
   public static final float CBR_USAGE_RATE = 0.964f;
-  /** The rate of nodes that cause churn. */
+  /** チャーン（離脱・再参加）を起こすノードの割合 */
   public static final float CHURN_NODE_RATE = 0.976f;
-  /** Compact block size. (unit: byte) */
+  /** コンパクトブロックのサイズ（単位：バイト） */
   public static final long COMPACT_BLOCK_SIZE = 18 * 1000; // 18KB
-  /** CBR failure rate for a node that always connect network. */
+  /** 常にネットワークに接続しているノードのCBR失敗率 */
   public static final float CBR_FAILURE_RATE_FOR_CONTROL_NODE = 0.13f;
-  /** CBR failure rate for a node that causes churn. */
+  /** チャーンを起こすノードのCBR失敗率 */
   public static final float CBR_FAILURE_RATE_FOR_CHURN_NODE = 0.27f;
 
-  /** The distribution of data size that a control node receives when fails CBR. */
+  /** 制御ノードがCBRに失敗した際に受信するデータサイズの分布 */
   public static final float[] CBR_FAILURE_BLOCK_SIZE_DISTRIBUTION_FOR_CONTROL_NODE = {
     0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f,
         0.01f, 0.01f,
@@ -109,7 +100,7 @@ public class SimulationConfiguration {
     0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f,
         0.01f, 0.01f
   };
-  /** The distribution of data size that a churn node receives when fails CBR. */
+  /** チャーンノードがCBRに失敗した際に受信するデータサイズの分布 */
   public static final float[] CBR_FAILURE_BLOCK_SIZE_DISTRIBUTION_FOR_CHURN_NODE = {
     0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f,
     0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f, 0.01f,
