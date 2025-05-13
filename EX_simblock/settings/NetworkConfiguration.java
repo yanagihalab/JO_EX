@@ -118,12 +118,6 @@ public class NetworkConfiguration {
     0.97, 0.98, 0.99, 0.995, 1.0
   };
 
-  /** ライトコインのアウトバウンドリンク数の累積分布（年次未指定） */
-  private static final double[] DEGREE_DISTRIBUTION_LITECOIN = { ...略... }
-
-  /** ドージコインのアウトバウンドリンク数の累積分布 */
-  private static final double[] DEGREE_DISTRIBUTION_DOGECOIN = { ...略... }
-
   /** アウトバウンドリンク数の累積分布（ビットコイン2015年のデータを使用） */
   public static final double[] DEGREE_DISTRIBUTION = DEGREE_DISTRIBUTION_BITCOIN_2015;
 }

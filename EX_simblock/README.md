@@ -120,4 +120,5 @@ Simulation results are saved in:
 - Official Repository: [SimBlock GitHub](https://github.com/dsg-titech/simblock)
 - Version: v0.8.0
 
+## 動作確認のGUI
 https://dsg-titech.github.io/simblock-visualizer/

@@ -31,7 +31,7 @@ public class SimulationConfiguration {
    * ブロック生成間隔の期待値。
    * マイニングの難易度は、この値と全ノードのマイニングパワーの合計によって自動調整される。（単位：ミリ秒）
    */
-  public static final long INTERVAL = 1000 * 60 * 10; // 10分
+  public static final long INTERVAL = 1000 * 60 * 7; // 10分
 
   /**
    * 各ノードの平均マイニングパワー。
